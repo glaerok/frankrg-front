@@ -1,0 +1,153 @@
+@import (reference) 'vars';
+@import (reference) 'colors';
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.middleFrame {
+    width: @middleWidth;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.checkBoxBox {
+    box-sizing: border-box;
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background-color: @grey2;
+    border: @border;
+    border-radius: 0.25em;
+    margin-right: 12px;
+    //
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.checkBoxBoxSelected {
+    border: 1px solid @orange1;
+    border-radius: 4px;
+    background-color: @orange1;
+    background-image: url('../img/svg/check.svg');
+}
+
+.textField() {
+    background: @whiteColor;
+    color: @blackColor;
+    border-radius: @borderRadius;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 0 16px;
+
+    border: @border;
+    width: 100%;
+    height: 44px;
+    display: inline-block;
+    box-sizing: border-box;
+    outline: none;
+
+    //&:active,
+    &:focus {
+        border-color: @orange2;
+        background: @whiteColor;
+
+        &:hover {
+            border-color: @orange1;
+            background: @whiteColor;
+        }
+    }
+
+    &[disable] {
+        background: @grey2;
+    }
+
+    &::placeholder {
+        color: @grey5;
+    }
+
+    &:hover {
+        border: 1px solid @orange1;
+    }
+
+    &.error {
+        border: 1px solid @errorColor;
+    }
+}
+
+.arrow() {
+    position: absolute;
+    border: none;
+    content: '';
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    top: calc(50% - 10px);
+}
+
+.arrowUp() {
+    .arrow();
+    background: url("../../assets/img/svg/arrow_top_dd.svg") 0 0 no-repeat;
+}
+
+.arrowDown() {
+    .arrow();
+    background: url("../../assets/img/svg/arrow_bottom_dd.svg") 0 0 no-repeat;
+}
+
+.buttonArrow() {
+    &:after {
+        .arrowDown;
+    }
+
+    &.open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &:after {
+            .arrowUp;
+        }
+    }
+
+    &:focus, &:active {
+        outline: none;
+    }
+}
+
+.listItem() {
+    cursor: pointer;
+    margin: 0 0 16px;
+
+    &:hover {
+        color: @orange2;
+    }
+}
+
+.blueWrapper {
+    min-height: 415px;
+    width: 100%;
+    background: linear-gradient(90deg, #4E54C8 0%, #8E94FF 100%);
+    color: @whiteColor;
+    padding: 88px 0;
+}
+
+.linkOrange() {
+    color: @orange2;
+    text-decoration: underline;
+
+    &:hover {
+        color: @blackColor;
+    }
+}

@@ -1,0 +1,103 @@
+@import (reference) './less/styles.less';
+
+.uploadWrapper {
+    padding: 0 0 100px;
+    width: 1240px;
+    margin: auto;
+
+    .mainContent {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .aside {
+            flex-grow: 2;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid @grey6;
+            border-radius: @borderRadius;
+
+            &.filesPlace {
+                //min-width: 710px;
+                width: 745px;
+            }
+        }
+    }
+
+    .descrtiptionText {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 0 0 10px;
+        padding: 0;
+    }
+
+    .link {
+        color: @grey6;
+        margin-left: 10px;
+        word-break: break-all;
+
+        &:hover {
+            color: @orange2;
+        }
+    }
+
+    .fileInList {
+        font-size: 13px;
+        color: @grey6;
+        min-height: 24px;
+        margin: 2px 0;
+        display: flex;
+        align-items: flex-start;
+
+        &:hover {
+            color: @blackColor;
+        }
+
+        button {
+            background: none;
+            border: 1px solid @grey6;
+            border-radius: @borderRadius;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        span {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .red {
+        color: @red;
+    }
+
+    .uploadFile {
+        padding: 10px 0;
+        font-size: 12px;
+    }
+
+    .status {
+        font-size: 14px;
+        color: @blackColor;
+        margin: 40px 0 0;
+    }
+
+    .pageCounter {
+        margin: 0 10px;
+    }
+
+    .topFilters {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-top: 18px;
+    }
+
+    .pageListPlace {
+        button {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    }
+}
